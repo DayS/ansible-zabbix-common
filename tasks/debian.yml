@@ -1,0 +1,10 @@
+---
+
+# Debian
+- name: Adding repo key
+  apt_key:
+    url: "http://repo.zabbix.com/zabbix-official-repo.key"
+    state: present
+
+- name: Adding repository
+  apt_repository: repo="deb http://repo.zabbix.com/zabbix/{{ zabbix_version }}/{{ ansible_distribution| lower }}/ {{ ansible_distribution_release }} main contrib non-free"

@@ -1,0 +1,5 @@
+---
+
+- name: Installing Zabbix server
+  include: "{{ ansible_os_family| lower }}.yml"
+  tags: [ zabbix-server ]
